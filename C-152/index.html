@@ -1,0 +1,59 @@
+<!-----------------------------Death Race--------------------------------->
+<!DOCTYPE>
+<head>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="bullet.js"></script>
+    <script src="crash.js"></script>
+    <script src="fire.js"></script>
+</head>
+
+<body>
+   
+   <a-scene background="color=:black">
+
+       <a-sky src="sky.jpeg"></a-sky>
+
+       <a-assets>
+           <a-asset-item id="Tank" src="/C-152 Project Part-2.glb"></a-asset-item>
+           <a-asset-item id ="Car-obj" src="/C-152 Project Part-1/tinker.obj"></a-asset-item>
+           <a-asset-item id ="Car-mtl" src="/C-152 Project Part-1/obj.mtl"></a-asset-item>
+           <a-asset-item id="Countach" src="Countach/scene.gltf"></a-asset-item>
+           <a-asset-item id="F1" src="F1/scene.gltf"></a-asset-item>
+       </a-assets>
+       
+
+    <a-entity  position="-100 0 0" animation="property:position; to:150 0 0;easing:linear;dur:500;loop:true"> 
+
+        <a-entity crash color="yellow" rotation="0 100 00" position="20 0 4" scale="0.01 0.01 0.01" gltf-model="#F1"></a-entity> 
+
+        <a-camera rotation="0 180 0" position="0 3 0 "></a-camera>
+       
+        <a-entity position="-7 0 0" scale="0.05 0.05 0.05" gltf-model="#Tank"></a-entity>
+
+        <a-box color="black" width="2" height="0.2" depth="0.2" position="-3 1 -0.1"></a-box>
+        <a-box color='black' width="2" height="0.2" depth="0.2" position="-3 1 -1.25"></a-box>
+
+        <a-box fire color='black' width="1" height="0.2" depth="0.2" position="-2.5 1 -1.25"></a-box>
+        <a-box  fire color='black' width="1" height="0.2" depth="0.2" position="-2.5 1 -0.1"></a-box>
+    
+        <a-entity   rotation="270 0 0" position="30 -1 0" scale="0.02 0.02 0.02" obj-model="obj:#Car-obj;mtl:#Car-mtl"></a-entity>
+        <a-entity   rotation="270 0 0" position="32 -1 3" scale="0.02 0.02 0.02" obj-model="obj:#Car-obj;mtl:#Car-mtl"></a-entity>
+    
+        <a-cylinder bullet  color="black" radius="0.15" rotation="90 0 90" position="1 2.25 -0.79"></a-cylinder>
+
+    </a-entity>    
+
+    <a-box src="glass.jpeg" color="blue" position="0 60 -70" width="40" height="120" depth="20" ></a-box>
+    <a-box src="glass.jpeg" color="blue" position="-70 20 -70" width="90" height="80" depth="20" ></a-box>
+    <a-box src="glass.jpeg" color="blue" position="90 90 -90" width="90" height="800" depth="40" ></a-box>
+    <a-box src="glass.jpeg" color="blue" position="0 90 90" width="50" height="3000" depth="40" ></a-box>
+    <a-box src="glass.jpeg" color="blue" position="210 90 -90" width="120" height="300" depth="40" ></a-box>
+    <a-box src="glass.jpeg" color="blue" position="130 90 90" width="120" height="300" depth="40" ></a-box>
+    <a-box src="glass.jpeg" color="blue" position="-150 20 90" width="150" height="70" depth="40" ></a-box>
+    
+    <a-plane  shadow="recieve:true" color="grey" position="0 -0.5 0" width="2000" height="2000" rotation="-90 0 0" ></a-plane>
+    
+   </a-scene>
+    
+</body>
+<!-----------------------------Death Race--------------------------------->
